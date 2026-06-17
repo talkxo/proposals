@@ -1,0 +1,1444 @@
+/* ==========================================================================
+   Sakura Quest Roadshow Pilot Proposal - Styling
+   Theme: Tokyo Midnight & Sakura Blossom (Premium Dark Mode)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Tokens */
+    --bg-main: #0c0e12;
+    --bg-card: #141822;
+    --bg-card-hover: #1c2230;
+    --bg-input: #1b202e;
+    
+    --color-sakura: #ff6f91;
+    --color-sakura-light: #ffb3c6;
+    --color-sakura-dark: #d84b70;
+    --color-sakura-alpha: rgba(255, 111, 145, 0.1);
+    
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted: #64748b;
+    
+    --color-gold: #f59e0b;
+    --color-gold-alpha: rgba(245, 158, 11, 0.1);
+    --color-blue: #3b82f6;
+    --color-blue-alpha: rgba(59, 130, 246, 0.1);
+    --color-green: #10b981;
+    --color-green-alpha: rgba(16, 185, 129, 0.1);
+    
+    --border-color: #262e3d;
+    --border-hover: #3d4a61;
+    
+    /* Typography */
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Layout */
+    --max-width: 1100px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+}
+
+/* Decorative Background Gradients */
+.bg-glow-1 {
+    position: absolute;
+    top: -200px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 111, 145, 0.08) 0%, rgba(12, 14, 18, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bg-glow-2 {
+    position: absolute;
+    top: 800px;
+    left: -200px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(12, 14, 18, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #ffffff 30%, var(--color-sakura-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--color-sakura-light);
+}
+
+p {
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-sakura);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--color-sakura-light);
+}
+
+/* Layout Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Component */
+.header {
+    padding: 4rem 0 3rem 0;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo-talkxo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.logo-talkxo span {
+    color: var(--color-sakura);
+}
+
+.proposal-badge {
+    background: var(--color-sakura-alpha);
+    border: 1px solid var(--color-sakura);
+    color: var(--color-sakura);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.header-main {
+    max-width: 800px;
+}
+
+.header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.meta-item i {
+    color: var(--color-sakura);
+}
+
+/* Info Alert Banner */
+.banner-alert {
+    background: rgba(255, 111, 145, 0.04);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--color-sakura);
+    border-radius: var(--border-radius-sm);
+    padding: 1.2rem;
+    margin: 2.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.banner-alert i {
+    color: var(--color-sakura);
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+}
+
+.banner-alert p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+.banner-alert strong {
+    color: var(--color-text-primary);
+}
+
+/* Grid Sections */
+.section-title {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 4px;
+    background: var(--color-sakura);
+    border-radius: 2px;
+}
+
+.section-intro {
+    color: var(--color-text-secondary);
+    max-width: 750px;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+}
+
+/* Audience Cards (3 Pillars) */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card-audience {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-audience:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+.card-audience .badge {
+    align-self: flex-start;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.badge-student {
+    background: rgba(255, 111, 145, 0.1);
+    color: var(--color-sakura);
+    border: 1px solid rgba(255, 111, 145, 0.2);
+}
+
+.badge-parent {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-blue);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.badge-counsellor {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--color-gold);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.card-audience h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-text-primary);
+}
+
+.card-audience .audience-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.card-audience .tension-box {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--border-radius-sm);
+    padding: 1rem;
+    margin: 1.2rem 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.card-audience .unlock-box {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-audience .unlock-box strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-sakura-light);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.card-audience .unlock-box p {
+    font-size: 0.9rem;
+}
+
+/* Chennai Pilot Checklist Component */
+.pilot-section {
+    margin-bottom: 5rem;
+}
+
+.checklist-progress-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.progress-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.progress-text p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.progress-bar-outer {
+    flex-grow: 1;
+    max-width: 500px;
+    height: 8px;
+    background: var(--bg-main);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-sakura-dark), var(--color-sakura));
+    border-radius: 4px;
+    transition: width 0.4s ease-out;
+}
+
+.progress-percentage {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-sakura-light);
+    min-width: 60px;
+    text-align: right;
+}
+
+.checklist-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--color-text-secondary);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.tab-btn:hover {
+    border-color: var(--border-hover);
+    color: var(--color-text-primary);
+}
+
+.tab-btn.active {
+    background: var(--color-sakura-alpha);
+    border-color: var(--color-sakura);
+    color: var(--color-sakura-light);
+}
+
+.tab-btn .badge-count {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+}
+
+.tab-btn.active .badge-count {
+    background: rgba(255, 111, 145, 0.2);
+    color: var(--color-sakura-light);
+}
+
+.checklist-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    min-height: 350px;
+}
+
+.checklist-pane {
+    display: none;
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checklist-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:hover {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.checklist-item.checked {
+    background: rgba(16, 185, 129, 0.015);
+}
+
+.checklist-checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-top: 0.15rem;
+}
+
+.checklist-checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+}
+
+.checklist-checkbox-wrapper:hover input ~ .checkmark {
+    border-color: var(--border-hover);
+}
+
+.checklist-checkbox-wrapper input:checked ~ .checkmark {
+    background-color: var(--color-green);
+    border-color: var(--color-green);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checklist-checkbox-wrapper input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checklist-checkbox-wrapper .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checklist-text {
+    flex-grow: 1;
+}
+
+.checklist-text h5 {
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    transition: var(--transition-smooth);
+}
+
+.checklist-item.checked .checklist-text h5 {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
+
+.checklist-text p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.checklist-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.checklist-tag {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.checklist-tag.high-priority {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+
+.checklist-tag.timeline {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Interactive Commercial Calculator Component */
+.calculator-section {
+    margin-bottom: 5rem;
+}
+
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.calculator-controls {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+}
+
+.calc-group {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.calc-group:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.calc-group-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+    color: var(--color-sakura-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc-option-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.calc-option-row:hover {
+    background: rgba(255, 255, 255, 0.01);
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+.calc-checkbox-wrapper {
+    margin-top: 0.2rem;
+}
+
+.calc-option-desc {
+    flex-grow: 1;
+}
+
+.calc-option-desc strong {
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.calc-option-desc p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.calc-option-price {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    text-align: right;
+    min-width: 90px;
+}
+
+/* Slider Component override */
+.slider-container {
+    padding: 0.5rem 0.8rem;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+}
+
+.slider-value {
+    font-weight: 700;
+    color: var(--color-sakura-light);
+}
+
+.range-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--bg-main);
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-sakura);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 111, 145, 0.5);
+    transition: transform 0.1s;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+/* Billing Summary Panel */
+.calculator-summary {
+    position: sticky;
+    top: 2rem;
+    background: linear-gradient(145deg, #161c28 0%, #0d111a 100%);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-premium);
+    height: fit-content;
+    transition: var(--transition-smooth);
+}
+
+.calculator-summary:hover {
+    border-color: var(--color-sakura-alpha);
+}
+
+.calculator-summary h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1rem;
+}
+
+.summary-list {
+    margin-bottom: 2rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.summary-row.total {
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-top: 1.2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.summary-row.total span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.summary-row.total .total-price {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-sakura);
+    text-shadow: 0 0 20px rgba(255, 111, 145, 0.2);
+}
+
+/* Target billing marker badge */
+.target-marker-box {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: var(--border-radius-sm);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+.target-marker-box.target-mismatch {
+    background: rgba(245, 158, 11, 0.05);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.target-marker-box i {
+    font-size: 1.2rem;
+}
+
+.target-marker-box.target-match i {
+    color: var(--color-green);
+}
+
+.target-marker-box.target-mismatch i {
+    color: var(--color-gold);
+}
+
+.target-marker-text {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.target-marker-text strong {
+    color: var(--color-text-primary);
+}
+
+/* Action Button */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-sakura), var(--color-sakura-dark));
+    color: #ffffff;
+    border: none;
+    padding: 1.1rem;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -5px rgba(255, 111, 145, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -5px rgba(255, 111, 145, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button Group */
+.proposal-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--color-text-secondary);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+    border-color: var(--border-hover);
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    opacity: 0.6;
+    transition: var(--transition-smooth);
+}
+
+.footer-logos:hover {
+    opacity: 0.85;
+}
+
+.footer-logos span {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--shadow-premium);
+    position: relative;
+    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.modal-close:hover {
+    color: var(--color-text-primary);
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.modal-body {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    max-height: 350px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.btn-copy-proposal {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #10b981;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+    z-index: 2000;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.toast.active {
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* ==========================================================================
+   30-Day Campaign Timeline & Calendar Styles
+   ========================================================================== */
+.timeline-calendar-section {
+    margin-bottom: 5rem;
+}
+
+.timeline-calendar-wrapper {
+    display: grid;
+    grid-template-columns: 3.8fr 2.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .timeline-calendar-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.calendar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-premium);
+}
+
+.calendar-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.calendar-month-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calendar-month-title i {
+    color: var(--color-sakura);
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.legend-dot.p-planning { background: var(--color-blue); }
+.legend-dot.p-buildup { background: var(--color-gold); }
+.legend-dot.p-live { background: var(--color-sakura); box-shadow: 0 0 8px var(--color-sakura); }
+.legend-dot.p-post { background: var(--color-green); }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-day-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calendar-cell {
+    aspect-ratio: 1.1;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-cell:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.calendar-cell.active {
+    border-color: var(--color-sakura);
+    box-shadow: 0 0 12px rgba(255, 111, 145, 0.25);
+    background: rgba(255, 111, 145, 0.05);
+}
+
+.calendar-cell-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.calendar-cell.active .calendar-cell-num {
+    color: var(--color-sakura);
+}
+
+.calendar-cell-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+
+.calendar-cell.phase-planning .calendar-cell-indicator { background: var(--color-blue); }
+.calendar-cell.phase-buildup .calendar-cell-indicator { background: var(--color-gold); }
+.calendar-cell.phase-live {
+    border-color: rgba(255, 111, 145, 0.4);
+    background: rgba(255, 111, 145, 0.03);
+}
+.calendar-cell.phase-live .calendar-cell-num {
+    color: var(--color-sakura-light);
+}
+.calendar-cell.phase-live .calendar-cell-indicator {
+    background: var(--color-sakura);
+    box-shadow: 0 0 6px var(--color-sakura);
+}
+.calendar-cell.phase-post .calendar-cell-indicator { background: var(--color-green); }
+
+/* Detail Panel */
+.detail-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-premium);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.detail-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.detail-day-num {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-phase-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.detail-phase-badge.phase-planning { background: var(--color-blue-alpha); color: var(--color-blue); }
+.detail-phase-badge.phase-buildup { background: var(--color-gold-alpha); color: var(--color-gold); }
+.detail-phase-badge.phase-live { background: var(--color-sakura-alpha); color: var(--color-sakura); border: 1px solid rgba(255, 111, 145, 0.2); }
+.detail-phase-badge.phase-post { background: var(--color-green-alpha); color: var(--color-green); }
+
+.detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.detail-body {
+    flex-grow: 1;
+}
+
+.detail-description {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.detail-section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.detail-tasks-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.detail-task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+.detail-task-item input[type="checkbox"] {
+    margin-top: 0.2rem;
+    accent-color: var(--color-sakura);
+}
+
+.detail-meta-box {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.detail-meta-item strong {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.15rem;
+}
+
+.detail-meta-item span {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   Print Styles (Optimized for PDF Export)
+   ========================================================================== */
+
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+        font-size: 10pt;
+        padding-bottom: 0;
+    }
+    
+    .bg-glow-1, .bg-glow-2, .proposal-controls, .checklist-tabs, .btn-primary, .target-marker-box, .checklist-checkbox-wrapper, .checkmark {
+        display: none !important;
+    }
+    
+    .container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .header {
+        padding: 1rem 0;
+        border-bottom: 2px solid #1a1a1a;
+    }
+    
+    .logo-talkxo {
+        color: #1a1a1a !important;
+    }
+    
+    .logo-talkxo span {
+        color: #d84b70 !important;
+    }
+    
+    h1 {
+        font-size: 24pt;
+        line-height: 1.2;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: #1a1a1a !important;
+    }
+    
+    h2 {
+        font-size: 16pt;
+        color: #1a1a1a !important;
+        margin-top: 20pt;
+        page-break-after: avoid;
+    }
+    
+    h3 {
+        font-size: 12pt;
+        color: #d84b70 !important;
+        margin-top: 12pt;
+    }
+    
+    .card-audience, .checklist-progress-container, .checklist-content, .calculator-controls, .calculator-summary {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+        color: #1a1a1a !important;
+        margin-bottom: 15pt !important;
+        padding: 12pt !important;
+        page-break-inside: avoid;
+    }
+    
+    .tension-box {
+        background: #f5f5f5 !important;
+        border-left: 3px solid #d84b70 !important;
+        color: #333333 !important;
+    }
+    
+    .card-audience .unlock-box strong {
+        color: #d84b70 !important;
+    }
+    
+    /* Show all checklist panes in print mode */
+    .checklist-pane {
+        display: block !important;
+        margin-bottom: 20pt;
+        page-break-inside: avoid;
+    }
+    
+    .checklist-pane h4 {
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 4pt;
+        margin-bottom: 10pt;
+        font-size: 12pt;
+        color: #1a1a1a;
+    }
+    
+    .checklist-item {
+        border-bottom: 1px solid #eeeeee !important;
+        padding: 6pt 0 !important;
+    }
+    
+    .checklist-text h5 {
+        color: #1a1a1a !important;
+        font-size: 10pt;
+        text-decoration: none !important;
+    }
+    
+    .checklist-text p {
+        color: #555555 !important;
+        font-size: 8.5pt;
+    }
+    
+    .calculator-wrapper {
+        display: block !important;
+    }
+    
+    .calc-option-row {
+        border-bottom: 1px solid #eeeeee !important;
+        padding: 6pt 0 !important;
+    }
+    
+    .calc-option-desc strong {
+        color: #1a1a1a !important;
+    }
+    
+    .calc-option-desc p {
+        color: #555555 !important;
+    }
+    
+    .calc-option-price {
+        color: #1a1a1a !important;
+    }
+    
+    .calculator-summary {
+        border: 2px solid #1a1a1a !important;
+        margin-top: 20pt;
+    }
+    
+    .summary-row.total .total-price {
+        color: #d84b70 !important;
+        text-shadow: none !important;
+        font-size: 20pt !important;
+    }
+}
