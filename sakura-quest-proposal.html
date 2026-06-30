@@ -3,23 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sakura Quest 2026 — Monthly Retainer Proposal | TalkXO × Education Japan</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Sakura Quest + FReX 2026 — Unified Retainer Proposal | TalkXO × Education Japan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---ink:#1A1A2E;--sakura:#A01F35;--sakuraLt:#C8384F;--sakuraPale:#FDEEF1;
---gold:#8A6B10;--goldPale:#F5EDD0;--white:#FFFFFF;--offWhite:#F5F3F0;
---surface:#ECEAE6;--slate:#555566;--slateLight:#8A8A9A;--border:#E5E1DB;
---wa:#128C47;--waPale:#E8F5EC;--em:#C8384F;--emPale:#FDEEF1;
+  --ink:#1A1A2E;
+  --sakura:#A01F35;
+  --sakuraLt:#C8384F;
+  --sakuraPale:#FDEEF1;
+  --frex:#5B21B6;
+  --frexLt:#7C3AED;
+  --frexPale:#F3E8FF;
+  --gold:#8A6B10;
+  --goldPale:#F5EDD0;
+  --white:#FFFFFF;
+  --offWhite:#F5F3F0;
+  --surface:#ECEAE6;
+  --slate:#555566;
+  --slateLight:#8A8A9A;
+  --border:#E5E1DB;
+  --wa:#128C47;
+  --waPale:#E8F5EC;
+  --em:#C8384F;
+  --emPale:#FDEEF1;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--offWhite);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.wrap{max-width:1150px;margin:0 auto;padding:0 28px}
+
+/* SCENARIO TOGGLE BANNER */
+.scenario-banner {
+  background: var(--ink);
+  padding: 16px 0;
+  border-bottom: 2px solid var(--sakuraLt);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.scenario-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.scenario-title {
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.scenario-title span {
+  color: var(--sakuraLt);
+}
+.scenario-selectors {
+  display: flex;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 4px;
+  border-radius: 40px;
+  gap: 4px;
+}
+.scenario-btn {
+  background: transparent;
+  border: none;
+  color: #9A9AB5;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scenario-btn:hover {
+  color: var(--white);
+}
+.scenario-btn.active {
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+@media(max-width:860px){
+  .scenario-container { flex-direction: column; text-align: center; gap: 12px; }
+  .scenario-selectors { width: 100%; justify-content: space-between; }
+  .scenario-btn { flex: 1; text-align: center; font-size: 10px; padding: 6px 10px; }
+}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(245,243,240,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
+nav{background:rgba(245,243,240,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1150px;margin:0 auto;padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
 .nav-logo{font-size:13px;font-weight:800;letter-spacing:0.15em;color:var(--sakura)}
 .nav-links{display:flex;gap:22px}
 .nav-links a{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color .2s}
@@ -30,42 +105,52 @@ nav{position:sticky;top:0;z-index:100;background:rgba(245,243,240,0.95);backdrop
 section{padding:72px 0}
 .label{font-size:10px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:var(--sakura);margin-bottom:14px}
 .label.gold{color:var(--gold)}
-h1{font-size:clamp(40px,7vw,76px);font-weight:900;letter-spacing:-0.03em;line-height:0.98}
+.label.frex-lbl{color:var(--frexLt)}
+h1{font-size:clamp(40px,6vw,70px);font-weight:900;letter-spacing:-0.03em;line-height:0.98}
 h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-0.02em;line-height:1.08}
 h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 .lead{font-size:15px;color:var(--slate);line-height:1.7;max-width:640px}
 
 /* HERO */
-#hero{background:var(--ink);color:var(--white);padding:90px 0 80px}
+#hero{background:var(--ink);color:var(--white);padding:70px 0 80px}
 .hero-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--sakuraLt);border:1px solid rgba(200,56,79,0.3);padding:6px 14px;border-radius:40px;margin-bottom:28px}
 #hero h1 span{color:var(--sakuraLt)}
-.hero-sub{font-size:16px;color:#9A9AB5;line-height:1.65;max-width:560px;margin-top:24px}
+#hero h1 span.frex-accent { color: var(--frexLt); }
+.hero-sub{font-size:16px;color:#9A9AB5;line-height:1.65;max-width:620px;margin-top:24px}
 .hero-meta{display:flex;flex-wrap:wrap;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1)}
 .hero-meta-item .k{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6B6B85;margin-bottom:6px}
 .hero-meta-item .v{font-size:15px;font-weight:700;color:var(--white)}
-.hero-meta-item .v.big{font-size:22px;color:var(--sakuraLt)}
+.hero-meta-item .v.big{font-size:22px;color:var(--sakuraLt);transition: color 0.3s;}
+.hero-meta-item .v.big.purple { color: var(--frexLt); }
 
 /* PIVOT CALLOUT */
-.pivot{background:rgba(200,56,79,0.08);border:1px solid rgba(200,56,79,0.2);border-radius:8px;padding:24px 28px;margin-top:36px}
+.pivot{background:rgba(200,56,79,0.08);border:1px solid rgba(200,56,79,0.2);border-radius:8px;padding:24px 28px;margin-top:36px;transition: all 0.3s;}
+.pivot.frex-pivot { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.2); }
 .pivot .pl{font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--sakuraLt);margin-bottom:8px}
+.pivot.frex-pivot .pl { color: var(--frexLt); }
 .pivot p{font-size:14px;color:#C5C5D8;line-height:1.65}
 .pivot strong{color:var(--white);font-weight:700}
 
 /* AUDIENCES */
 .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
 @media(max-width:860px){.aud-grid{grid-template-columns:1fr}}
-.aud-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 24px;box-shadow:0 1px 4px rgba(0,0,0,0.03)}
+.aud-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 24px;box-shadow:0 1px 4px rgba(0,0,0,0.03);position:relative;overflow:hidden;transition: all 0.3s ease;}
+.aud-card.frex-card { border-top: 4px solid var(--frex); }
 .aud-card .tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:30px;margin-bottom:16px}
 .tag.pink{background:var(--sakuraPale);color:var(--sakura)}
 .tag.muted{background:var(--surface);color:var(--slate)}
 .tag.gold{background:var(--goldPale);color:var(--gold)}
+.tag.purple{background:var(--frexPale);color:var(--frex)}
 .aud-card h3{margin-bottom:4px}
 .aud-role{font-size:11px;font-weight:700;color:var(--sakura);letter-spacing:0.04em;margin-bottom:14px}
 .aud-card.muted .aud-role{color:var(--slate)}
 .aud-card.gold .aud-role{color:var(--gold)}
+.aud-card.frex-card .aud-role{color:var(--frex)}
 .aud-desc{font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:16px}
-.aud-quote{font-size:12.5px;font-style:italic;color:var(--ink);line-height:1.55;padding:12px 14px;background:var(--sakuraPale);border-radius:6px;margin-bottom:14px}
+.aud-quote{font-size:12.5px;font-style:italic;color:var(--ink);line-height:1.55;padding:12px 14px;background:var(--sakuraPale);border-radius:6px;margin-bottom:14px;transition: background 0.3s;}
+.aud-card.frex-card .aud-quote { background: var(--frexPale); }
 .aud-unlock-l{font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.aud-card.frex-card .aud-unlock-l { color: var(--frexLt); }
 .aud-unlock-d{font-size:12.5px;color:var(--slate);line-height:1.55}
 
 /* RETAINER OVERVIEW */
@@ -73,27 +158,23 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 .deliv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}
 @media(max-width:860px){.deliv-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.deliv-grid{grid-template-columns:1fr}}
-.deliv{background:var(--offWhite);border:1px solid var(--border);border-radius:10px;padding:26px 22px;text-align:left}
-.deliv .num{font-size:46px;font-weight:900;letter-spacing:-0.03em;color:var(--sakura);line-height:1}
+.deliv{background:var(--offWhite);border:1px solid var(--border);border-radius:10px;padding:26px 22px;text-align:left;position:relative;transition: all 0.3s ease;}
+.deliv .num{font-size:46px;font-weight:900;letter-spacing:-0.03em;color:var(--sakura);line-height:1;transition: color 0.3s;}
+.deliv .num.purple { color: var(--frex); }
 .deliv .unit{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin-top:8px}
 .deliv .desc{font-size:12px;color:var(--slateLight);line-height:1.5;margin-top:10px}
 .deliv.wa .num{color:var(--wa)}
 .deliv.em .num{color:var(--gold)}
 
-/* SECTION SUBHEAD */
-.subhead{font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--slateLight);margin-bottom:18px}
-.divider{height:1px;background:var(--border);margin:52px 0}
-
 /* CONTENT BUCKETS */
 .bucket-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
 @media(max-width:760px){.bucket-grid{grid-template-columns:1fr}}
-.bucket{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;border-top:3px solid var(--sakura)}
-.bucket:nth-child(2){border-top-color:var(--gold)}
-.bucket:nth-child(3){border-top-color:var(--wa)}
-.bucket:nth-child(4){border-top-color:var(--ink)}
+.bucket{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;border-top:3px solid var(--sakura);transition: all 0.3s ease;}
+.bucket.frex-b { border-top-color: var(--frex); }
 .bucket-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
 .bucket h3{font-size:17px}
 .bucket-count{font-size:11px;font-weight:800;color:var(--sakura);background:var(--sakuraPale);padding:4px 10px;border-radius:20px;white-space:nowrap}
+.bucket.frex-b .bucket-count { color: var(--frex); background: var(--frexPale); }
 .bucket:nth-child(2) .bucket-count{color:var(--gold);background:var(--goldPale)}
 .bucket:nth-child(3) .bucket-count{color:var(--wa);background:var(--waPale)}
 .bucket:nth-child(4) .bucket-count{color:var(--ink);background:var(--surface)}
@@ -102,6 +183,7 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 .bucket li{font-size:12.5px;color:var(--ink);padding:6px 0 6px 18px;position:relative;line-height:1.45;border-bottom:1px solid var(--offWhite)}
 .bucket li:last-child{border-bottom:none}
 .bucket li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--sakura)}
+.bucket.frex-b li::before { background: var(--frex); }
 .bucket:nth-child(2) li::before{background:var(--gold)}
 .bucket:nth-child(3) li::before{background:var(--wa)}
 .bucket:nth-child(4) li::before{background:var(--ink)}
@@ -119,7 +201,7 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 /* GRID CALENDAR */
 .month-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:16px}
 .dow{font-size:9px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--slateLight);text-align:center;padding:6px 0}
-.day{min-height:84px;border:1px solid var(--border);border-radius:6px;padding:6px;position:relative;background:var(--offWhite);font-size:10px}
+.day{min-height:94px;border:1px solid var(--border);border-radius:6px;padding:6px;position:relative;background:var(--offWhite);font-size:10px;transition: all 0.2s;}
 .day.empty{background:transparent;border:none}
 .day .dn{font-size:11px;font-weight:700;color:var(--slateLight);margin-bottom:4px}
 .day.event{background:var(--sakuraPale);border-color:var(--sakura)}
@@ -127,18 +209,19 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 .evt-pill{font-size:8px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--white);background:var(--sakura);padding:2px 5px;border-radius:8px;display:inline-block;margin-bottom:3px}
 .chip{display:block;font-size:9px;font-weight:600;padding:2px 5px;border-radius:4px;margin-bottom:2px;line-height:1.25;text-align:left}
 .chip.post{background:#FDEEF1;color:#A01F35}
+.chip.post-frex{background:#F3E8FF;color:#5B21B6}
 .chip.wa{background:#E8F5EC;color:#0E7038}
 .chip.em{background:#EEF0FA;color:#3A4DA0}
 .chip.news{background:#F5EDD0;color:#7A5E0E}
-@media(max-width:760px){.month-grid{font-size:8px;padding:8px;gap:3px}.day{min-height:64px;padding:3px}.chip{font-size:7px}.dow{font-size:7px}}
+@media(max-width:760px){.month-grid{font-size:8px;padding:8px;gap:3px}.day{min-height:74px;padding:3px}.chip{font-size:7px}.dow{font-size:7px}}
 
-/* LIST CALENDAR (for posts/wa/em detail) */
+/* LIST CALENDAR */
 .cal-legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .leg-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--slate)}
 .leg-dot{width:12px;height:12px;border-radius:3px}
 
 .content-list{display:grid;gap:8px}
-.cl-row{display:grid;grid-template-columns:54px 1fr 130px;gap:14px;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 16px}
+.cl-row{display:grid;grid-template-columns:54px 1fr 130px;gap:14px;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 16px;transition: all 0.2s ease;}
 @media(max-width:680px){.cl-row{grid-template-columns:44px 1fr;}.cl-tag-col{display:none}}
 .cl-date{font-size:11px;font-weight:800;color:var(--ink);text-align:center;line-height:1.2}
 .cl-date span{display:block;font-size:8px;font-weight:600;color:var(--slateLight);text-transform:uppercase}
@@ -149,22 +232,30 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 .t-aspiration{background:#EEF0FA;color:#3A4DA0}
 .t-proof{background:var(--waPale);color:#0E7038}
 .t-authority{background:var(--goldPale);color:var(--gold)}
+.t-frex{background:var(--frexPale);color:var(--frex)}
 .cl-row.wa-row{border-left:3px solid var(--wa)}
 .cl-row.em-row{border-left:3px solid var(--gold)}
+.cl-row.frex-border{border-left:3px solid var(--frex)}
 
 /* COMMERCIAL */
 #commercial{background:var(--ink);color:var(--white)}
 #commercial .label{color:var(--sakuraLt)}
 #commercial h2{color:var(--white)}
-.price-card{background:linear-gradient(135deg,rgba(200,56,79,0.12),rgba(138,107,16,0.06));border:1px solid rgba(200,56,79,0.25);border-radius:14px;padding:44px;margin-top:38px;text-align:center}
-.price-card .pl{font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--sakuraLt);margin-bottom:16px}
-.price-amount{font-size:clamp(48px,9vw,84px);font-weight:900;letter-spacing:-0.03em;line-height:1;color:var(--white)}
+.price-card{background:linear-gradient(135deg,rgba(200,56,79,0.12),rgba(138,107,16,0.06));border:1px solid rgba(200,56,79,0.25);border-radius:14px;padding:44px;margin-top:38px;text-align:center;transition: all 0.3s ease;}
+.price-card.frex-active {
+  background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(200,56,79,0.06));
+  border-color: rgba(124,58,237,0.3);
+}
+.price-card .pl{font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--sakuraLt);margin-bottom:16px;transition: color 0.3s;}
+.price-card.frex-active .pl { color: var(--frexLt); }
+.price-amount{font-size:clamp(48px,9vw,78px);font-weight:900;letter-spacing:-0.03em;line-height:1;color:var(--white);transition: all 0.3s;}
 .price-amount span{font-size:0.4em;color:#9A9AB5;font-weight:700}
 .price-sub{font-size:14px;color:#9A9AB5;margin-top:14px;line-height:1.6}
-.price-includes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px;text-align:left;max-width:680px;margin-left:auto;margin-right:auto}
+.price-includes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px;text-align:left;max-width:740px;margin-left:auto;margin-right:auto}
 @media(max-width:600px){.price-includes{grid-template-columns:1fr}}
 .pi{font-size:13px;color:#D5D5E2;padding-left:24px;position:relative;line-height:1.5}
 .pi::before{content:'✓';position:absolute;left:0;color:var(--sakuraLt);font-weight:800}
+.price-card.frex-active .pi::before { color: var(--frexLt); }
 .price-note{font-size:12px;color:#6B6B85;margin-top:28px;line-height:1.6}
 
 /* TERMS */
@@ -178,7 +269,8 @@ h3{font-size:20px;font-weight:800;letter-spacing:-0.01em}
 #closing{background:var(--ink);color:var(--white);text-align:center;padding:90px 0}
 #closing h2{color:var(--white)}
 #closing h2 span{color:var(--sakuraLt)}
-.closing-sub{font-size:15px;color:#9A9AB5;max-width:480px;margin:22px auto 0;line-height:1.65}
+#closing h2 span.purple { color: var(--frexLt); }
+.closing-sub{font-size:15px;color:#9A9AB5;max-width:540px;margin:22px auto 0;line-height:1.65}
 .closing-foot{font-size:12px;color:#6B6B85;margin-top:36px}
 
 footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size:11px;letter-spacing:0.04em}
@@ -186,15 +278,27 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 </head>
 <body>
 
+<!-- INTERACTIVE SCENARIO TOGGLER -->
+<div class="scenario-banner">
+  <div class="wrap scenario-container">
+    <div class="scenario-title">PROPOSAL CONFIGURATION: <span id="active-scenario-label">Option 1: Sakura Quest Baseline</span></div>
+    <div class="scenario-selectors">
+      <button class="scenario-btn active" onclick="setScenario('baseline')">Baseline SQ</button>
+      <button class="scenario-btn" onclick="setScenario('addon')">Option 1: SQ + FReX Add-On</button>
+      <button class="scenario-btn" onclick="setScenario('integrated')">Option 2: FReX Integrated Bundle</button>
+    </div>
+  </div>
+</div>
+
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">TALKXO × SAKURA QUEST</div>
+    <div class="nav-logo">TALKXO × SAKURA QUEST + FREX</div>
     <div class="nav-links">
       <a href="#audiences">Audiences</a>
-      <a href="#retainer">Retainer</a>
-      <a href="#buckets">Content</a>
+      <a href="#retainer">Retainer Plan</a>
+      <a href="#buckets">Pillars</a>
       <a href="#calendar">July Calendar</a>
-      <a href="#commercial">Commercial</a>
+      <a href="#commercial">Commercials</a>
     </div>
   </div>
 </nav>
@@ -202,18 +306,20 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <!-- HERO -->
 <section id="hero">
   <div class="wrap">
-    <span class="hero-tag">Monthly Retainer Proposal</span>
-    <h1>Sakura Quest <span>2026</span><br>Content Engine</h1>
-    <p class="hero-sub">An always-on social, WhatsApp, and email content retainer for Education Japan — built to fuel the Kolkata leg and every roadshow city after it, while steadily growing the audience that fills Yashobhoomi.</p>
+    <span class="hero-tag" id="hero-tag-text">Unified Retainer Proposal</span>
+    <h1 id="hero-main-title">Sakura Quest <span>2026</span><br>Content Engine</h1>
+    <p class="hero-sub" id="hero-subtitle">An always-on social, WhatsApp, and email content retainer for Education Japan — built to fuel the Kolkata leg and every roadshow city after it, while steadily growing the audience that fills Yashobhoomi.</p>
+    
     <div class="hero-meta">
       <div class="hero-meta-item"><div class="k">Scope Begins</div><div class="v">July 2026</div></div>
       <div class="hero-meta-item"><div class="k">Anchor Event</div><div class="v">Kolkata · 12 July</div></div>
-      <div class="hero-meta-item"><div class="k">Engagement</div><div class="v">Monthly Retainer</div></div>
-      <div class="hero-meta-item"><div class="k">Investment</div><div class="v big">Rs. 1.35L / month</div></div>
+      <div class="hero-meta-item"><div class="k">Active Scope</div><div class="v" id="hero-meta-scope">Baseline Engine</div></div>
+      <div class="hero-meta-item"><div class="k">Investment</div><div class="v big" id="hero-meta-price">Rs. 1.35L / mo</div></div>
     </div>
-    <div class="pivot">
-      <div class="pl">The Model</div>
-      <p>This is not a one-off campaign. It's a <strong>monthly content engine</strong> — 20 social posts, 12 WhatsApp creatives, 8 emails, and 1 newsletter every month. In event months like July, the calendar tilts toward the live roadshow leg. In quieter months, it tilts toward lead magnets and audience building. <strong>Same engine, re-weighted to the moment.</strong></p>
+
+    <div class="pivot" id="hero-pivot-card">
+      <div class="pl" id="pivot-label">The Operational Architecture</div>
+      <p id="pivot-desc">This is not a one-off campaign. It's a <strong>monthly content engine</strong> — 20 social posts, 12 WhatsApp creatives, 8 emails, and 1 newsletter every month. In event months like July, the calendar tilts toward the live roadshow leg. In quieter months, it tilts toward lead magnets and audience building. <strong>Same engine, re-weighted to the moment.</strong></p>
     </div>
   </div>
 </section>
@@ -221,52 +327,25 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <!-- AUDIENCES -->
 <section id="audiences">
   <div class="wrap">
-    <div class="label">Who We're Talking To</div>
-    <h2>Three audiences. One decision.</h2>
-    <p class="lead" style="margin-top:14px">A seat at Sakura Quest is never one person's decision. Every month, the content speaks to all three — the student's curiosity, the parent's caution, and the counsellor's recommendation.</p>
-    <div class="aud-grid">
-      <div class="aud-card">
-        <span class="tag pink">Primary</span>
-        <h3>The Student</h3>
-        <div class="aud-role">Class 10–12 · Age 15–18</div>
-        <div class="aud-desc">Culturally drawn to Japan via anime, manga, and gaming — but stuck between "I love Japanese culture" and "I could build a future there."</div>
-        <div class="aud-quote">"Japan feels exciting, but is it a risk? What if I can't find a job? Is this realistic for someone like me?"</div>
-        <div class="aud-unlock-l">What Unlocks Them</div>
-        <div class="aud-unlock-d">Peer proof — students exactly like them who made it work. Instagram Reels & YouTube Shorts.</div>
-      </div>
-      <div class="aud-card muted">
-        <span class="tag muted">Decision Maker</span>
-        <h3>The Parent</h3>
-        <div class="aud-role">Primary Veto Holder</div>
-        <div class="aud-desc">The financial and logical decision-maker. Unfamiliar with modern Japan, benchmarked on US/UK/Canada education paths.</div>
-        <div class="aud-quote">"Is Japan safe? Can my child get a job after? How does the cost compare to traditional study-abroad countries?"</div>
-        <div class="aud-unlock-l">What Unlocks Them</div>
-        <div class="aud-unlock-d">Hard comparisons, cost breakdowns, safety data, testimonials. WhatsApp carousels and email explainers.</div>
-      </div>
-      <div class="aud-card gold">
-        <span class="tag gold">High Leverage</span>
-        <h3>The Counsellor</h3>
-        <div class="aud-role">School Coach / Career Advisor</div>
-        <div class="aud-desc">Highly influential but underserved. Recommends US/UK/Canada because resources are ready — Japan feels like extra work.</div>
-        <div class="aud-quote">"I don't know enough about Japanese university admissions to confidently recommend it to my students."</div>
-        <div class="aud-unlock-l">What Unlocks Them</div>
-        <div class="aud-unlock-d">Professional resource kits, university factsheets, alumni contacts. LinkedIn and shareable PDFs.</div>
-      </div>
+    <div class="label" id="audience-lbl">Who We're Talking To</div>
+    <h2 id="audience-title">Three distinct audiences. One unified conversion goal.</h2>
+    <p class="lead" id="audience-desc-text">A seat at Sakura Quest is never one person's decision. Every month, the content speaks to all vectors — the student's curiosity, the parent's caution, and the counsellor's recommendation.</p>
+    
+    <div class="aud-grid" id="audiences-container">
+      <!-- Dynamic Audiences Rendered via JS -->
     </div>
   </div>
 </section>
 
-<!-- RETAINER -->
+<!-- RETAINER OVERVIEW -->
 <section id="retainer">
   <div class="wrap">
-    <div class="label">What's Included Every Month</div>
-    <h2>The monthly deliverable.</h2>
-    <p class="lead" style="margin-top:14px">A fixed, predictable output every month — the volume that keeps Sakura Quest present across every channel its three audiences actually use.</p>
-    <div class="deliv-grid">
-      <div class="deliv"><div class="num">20</div><div class="unit">Social Posts</div><div class="desc">Instagram & cross-posted reels, carousels, and statics across all content buckets.</div></div>
-      <div class="deliv wa"><div class="num">12</div><div class="unit">WhatsApp Creatives</div><div class="desc">Broadcast-ready creatives for registration nudges, reminders, and lead-magnet drops.</div></div>
-      <div class="deliv em"><div class="num">8</div><div class="unit">Emails</div><div class="desc">Nurture sequences and broadcasts to students, parents, and the counsellor list.</div></div>
-      <div class="deliv"><div class="num">1</div><div class="unit">Newsletter</div><div class="desc">A monthly roundup — roadshow updates, alumni stories, and Japan education news.</div></div>
+    <div class="label" id="retainer-lbl">What's Included Every Month</div>
+    <h2 id="retainer-title">The monthly deliverable framework.</h2>
+    <p class="lead" id="retainer-desc-text">A fixed, predictable output every month — the volume that keeps Sakura Quest present across every channel its target audiences actually use.</p>
+    
+    <div class="deliv-grid" id="deliverables-container">
+      <!-- Dynamic Deliverables Rendered via JS -->
     </div>
   </div>
 </section>
@@ -274,54 +353,12 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <!-- CONTENT BUCKETS -->
 <section id="buckets">
   <div class="wrap">
-    <div class="label gold">How the 20 Posts Are Built</div>
-    <h2>Four content buckets.</h2>
-    <p class="lead" style="margin-top:14px">Every social post belongs to one of four buckets. The split shifts month to month — in July, the Kolkata bucket is heaviest. The other three run continuously as evergreen lead magnets for Education Japan.</p>
-    <div class="bucket-grid" style="margin-top:34px">
-      <div class="bucket">
-        <div class="bucket-top"><h3>Roadshow / Kolkata</h3><span class="bucket-count">7 posts</span></div>
-        <div class="bucket-goal">Event-tied, time-sensitive. Drives registrations and footfall for the 12 July Kolkata leg, then converts it into proof for the next city.</div>
-        <ul>
-          <li>Kolkata announcement + venue reveal</li>
-          <li>"What you'll walk away with" carousel</li>
-          <li>Participating universities preview</li>
-          <li>Scholarship session teaser</li>
-          <li>Final 48-hour countdown + seat scarcity</li>
-          <li>Event-day live recap reel</li>
-          <li>Post-event highlights + "next stop" tease</li>
-        </ul>
-      </div>
-      <div class="bucket">
-        <div class="bucket-top"><h3>Aspiration / Japan Life</h3><span class="bucket-count">5 posts</span></div>
-        <div class="bucket-goal">Evergreen lead magnet for students. Builds the dream and grows reach independent of any event — the top of the funnel.</div>
-        <ul>
-          <li>"A day in the life of an Indian student in Tokyo"</li>
-          <li>Cost of living in Japan — student budget breakdown</li>
-          <li>5 career paths you didn't know Japan leads in</li>
-          <li>Anime-affinity meme post (brand-safe, comments-led)</li>
-          <li>Campus tour reel — a featured university</li>
-        </ul>
-      </div>
-      <div class="bucket">
-        <div class="bucket-top"><h3>Proof / Stories</h3><span class="bucket-count">4 posts</span></div>
-        <div class="bucket-goal">Peer and alumni proof. The single highest-converting content type for undecided students and anxious parents alike.</div>
-        <ul>
-          <li>Alumni journey — "From [city] to Osaka"</li>
-          <li>Student testimonial reel from SQ 2025</li>
-          <li>Parent testimonial — addressing the fear</li>
-          <li>"Where are they now" — placement success story</li>
-        </ul>
-      </div>
-      <div class="bucket">
-        <div class="bucket-top"><h3>Authority / Education</h3><span class="bucket-count">4 posts</span></div>
-        <div class="bucket-goal">Lead magnets for parents and counsellors. Builds Education Japan's credibility as the definitive Japan-education authority in India.</div>
-        <ul>
-          <li>JASSO &amp; MEXT scholarships explained</li>
-          <li>Is Japan safe? The data parents ask for</li>
-          <li>Japan vs Canada — honest cost comparison</li>
-          <li>Counsellor resource: admissions timeline factsheet</li>
-        </ul>
-      </div>
+    <div class="label gold" id="buckets-lbl">How the Content is Built</div>
+    <h2 id="buckets-title">Four operational pillars. Adaptive weights.</h2>
+    <p class="lead" id="buckets-desc-text">Every social post is aligned to a core strategic pillar. During peak milestone months (like July for Kolkata), the event pillar takes heavy priority, while evergreen authority magnets scale dynamically during off-peak periods.</p>
+    
+    <div class="bucket-grid" id="buckets-container">
+      <!-- Dynamic Buckets Rendered via JS -->
     </div>
   </div>
 </section>
@@ -330,34 +367,34 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <section id="calendar">
   <div class="wrap">
     <div class="label">Sample Implementation</div>
-    <h2>July 2026 — the full calendar.</h2>
-    <p class="lead" style="margin-top:14px">Not a placeholder. This is the actual content calendar we'd run in July, built around the Kolkata leg on the 12th. Every post, WhatsApp creative, and email is mapped to a date and a bucket.</p>
+    <h2>July 2026 — Master Distribution Mapping.</h2>
+    <p class="lead" id="calendar-desc-text">This layout shifts weight organically. During peak milestone months, specific event distribution dominates; during off-peak periods, evergreen authority building automatically scales.</p>
 
     <div class="cal-tabs">
-      <button class="cal-tab active" data-panel="month">Month View</button>
-      <button class="cal-tab" data-panel="posts">20 Posts <span class="c">· detail</span></button>
-      <button class="cal-tab" data-panel="wa">12 WhatsApp <span class="c">· detail</span></button>
-      <button class="cal-tab" data-panel="em">8 Emails + Newsletter <span class="c">· detail</span></button>
+      <button class="cal-tab active" data-panel="month" onclick="setCalTab('month')">Month View</button>
+      <button class="cal-tab" data-panel="posts" onclick="setCalTab('posts')">Social Posts <span class="c" id="tab-posts-count">· 20 detail</span></button>
+      <button class="cal-tab" data-panel="wa" onclick="setCalTab('wa')">WhatsApp <span class="c" id="tab-wa-count">· 12 detail</span></button>
+      <button class="cal-tab" data-panel="em" onclick="setCalTab('em')">Emails + Newsletters <span class="c" id="tab-em-count">· 9 detail</span></button>
     </div>
 
     <!-- MONTH GRID -->
     <div class="cal-panel active" id="panel-month">
-      <div class="cal-legend">
-        <div class="leg-item"><span class="leg-dot" style="background:#FDEEF1;border:1px solid #A01F35"></span>Social Post</div>
-        <div class="leg-item"><span class="leg-dot" style="background:#E8F5EC;border:1px solid #128C47"></span>WhatsApp</div>
-        <div class="leg-item"><span class="leg-dot" style="background:#EEF0FA;border:1px solid #3A4DA0"></span>Email</div>
-        <div class="leg-item"><span class="leg-dot" style="background:#F5EDD0;border:1px solid #8A6B10"></span>Newsletter</div>
+      <div class="cal-legend" id="calendar-legend-container">
+        <!-- Legend items dynamically configured based on FReX presence -->
       </div>
-      <div class="month-grid" id="monthGrid"></div>
+      <div class="month-grid" id="monthGrid">
+        <!-- Calendar grid cells built dynamically -->
+      </div>
     </div>
 
     <!-- POSTS DETAIL -->
     <div class="cal-panel" id="panel-posts">
       <div class="cal-legend">
-        <div class="leg-item"><span class="leg-dot t-kolkata" style="background:#FDEEF1"></span>Roadshow / Kolkata</div>
-        <div class="leg-item"><span class="leg-dot t-aspiration" style="background:#EEF0FA"></span>Aspiration</div>
-        <div class="leg-item"><span class="leg-dot t-proof" style="background:#E8F5EC"></span>Proof / Stories</div>
-        <div class="leg-item"><span class="leg-dot t-authority" style="background:#F5EDD0"></span>Authority</div>
+        <div class="leg-item"><span class="leg-dot t-kolkata"></span>Roadshow / Event</div>
+        <div class="leg-item"><span class="leg-dot t-aspiration"></span>Core Aspiration</div>
+        <div class="leg-item"><span class="leg-dot t-proof">Social Proof</span></div>
+        <div class="leg-item"><span class="leg-dot t-authority">Authority Engine</span></div>
+        <div class="leg-item id-frex-leg" style="display:none;"><span class="leg-dot t-frex" style="background:var(--frexPale)"></span>FReX track</div>
       </div>
       <div class="content-list" id="postsList"></div>
     </div>
@@ -377,30 +414,35 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <!-- COMMERCIAL -->
 <section id="commercial">
   <div class="wrap">
-    <div class="label">The Commercial</div>
-    <h2>A flat monthly retainer.</h2>
-    <p class="lead" style="margin-top:14px;color:#9A9AB5">No per-piece pricing, no surprises. One predictable monthly fee covering the entire content engine — strategy, production, scheduling, and reporting.</p>
-    <div class="price-card">
-      <div class="pl">Monthly Retainer</div>
-      <div class="price-amount">Rs. 1,35,000<span> / month</span></div>
-      <div class="price-sub">Billed monthly · All content production, copy, design, and management included</div>
-      <div class="price-includes">
-        <div class="pi">20 social posts — reels, carousels &amp; statics</div>
-        <div class="pi">12 WhatsApp broadcast creatives</div>
-        <div class="pi">8 emails across all three audiences</div>
-        <div class="pi">1 monthly newsletter</div>
-        <div class="pi">Content strategy &amp; monthly calendar</div>
-        <div class="pi">Copywriting, design &amp; video editing</div>
-        <div class="pi">Roadshow-month re-weighting (e.g. Kolkata in July)</div>
-        <div class="pi">Monthly performance report</div>
+    <div class="label">Investment Structure</div>
+    <h2>Predictable retainer options.</h2>
+    <p class="lead" style="margin-top:14px;color:#9A9AB5">No per-piece surprise invoices. One flat monthly fee covering creative strategy, production, scheduling, copywriting, assets design, and custom monthly performance analytics.</p>
+    
+    <div class="price-card" id="commercial-price-card">
+      <div class="pl" id="commercial-tag-label">Retainer Configuration</div>
+      <div class="price-amount" id="commercial-price-value">Rs. 1,35,000<span> / month</span></div>
+      <div class="price-sub" id="commercial-price-sub">Billed monthly · All design, production, and localization parameters included</div>
+      
+      <div class="price-includes" id="commercial-inclusions-list">
+        <!-- Dynamic list of what is included based on chosen option -->
       </div>
-      <div class="price-note">Scope begins July 2026. On-ground live event coverage, paid ad management, and influencer partnerships are scoped separately as add-ons when required.</div>
+      
+      <div class="price-note" id="commercial-note-text">Scope begins July 2026. Live on-site creator asset capture, major paid performance ad-spend allocations, and paid influencer collaborations are quoted per individual activation.</div>
     </div>
 
     <div class="terms">
-      <div class="term"><h4>Engagement</h4><p>Rolling monthly retainer. We recommend a minimum 3-month commitment to let the audience-building compound across the roadshow.</p></div>
-      <div class="term"><h4>What's Separate</h4><p>Live event-day coverage, Meta/Google ad spend &amp; management, and influencer collaborations are quoted per activation.</p></div>
-      <div class="term"><h4>Ways of Working</h4><p>Monthly calendar shared for approval in advance. Content delivered on a rolling weekly basis. One consolidated revision round per piece.</p></div>
+      <div class="term">
+        <h4>Engagement Structure</h4>
+        <p id="term-engagement-text">Rolling monthly retainer architecture. We highly recommend a minimum initial 3-month window to track cumulative performance parameters across consecutive roadshows.</p>
+      </div>
+      <div class="term">
+        <h4>Boundaries of Scope</h4>
+        <p id="term-boundaries-text">Live event-day creative capture runs, performance ad setup and campaign management on Meta/Google, and creator collaborations run as separate custom scopes.</p>
+      </div>
+      <div class="term">
+        <h4>Execution Workflow</h4>
+        <p id="term-execution-text">Standard master calendar shared for review in advance. Rolling weekly pipeline deliveries. Single comprehensive consolidation round for reviews.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -408,8 +450,8 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <!-- CLOSING -->
 <section id="closing">
   <div class="wrap">
-    <h2>Let's build the engine<br>behind <span>Sakura Quest 2026.</span></h2>
-    <p class="closing-sub">Kolkata is on 12 July. Starting the retainer in July means the engine is running before the leg — and every city after compounds on it.</p>
+    <h2 id="closing-main-header">Let's build the engine<br>behind <span>Sakura Quest 2026.</span></h2>
+    <p class="closing-sub" id="closing-sub-text">Kolkata kicks off on 12 July. Starting the retainer in July means the content engine is robust and compounding before the live roadshow leg even begins.</p>
     <div class="closing-foot">TalkXO · hello.talkxo.com · Gurgaon, India</div>
   </div>
 </section>
@@ -417,8 +459,12 @@ footer{background:#111120;color:#6B6B85;text-align:center;padding:28px;font-size
 <footer>© 2026 TalkXO · Built with precision and strategy for Education Japan, India</footer>
 
 <script>
-// ---- DATA ----
-const posts = [
+// ---- STATE ----
+let currentScenario = 'baseline'; // 'baseline', 'addon', 'integrated'
+let currentCalTab = 'month';
+
+// ---- BASELINE DATABASES ----
+const baseline_posts = [
   {d:2, t:"A Day in the Life of an Indian Student in Tokyo", s:"Reel · subtitled, no VO — curiosity-first top-of-funnel", b:"aspiration", tag:"Aspiration"},
   {d:3, t:"Kolkata is Coming — Save the Date", s:"Announcement carousel · venue + date reveal for 12 July", b:"kolkata", tag:"Kolkata"},
   {d:4, t:"JASSO & MEXT Scholarships, Explained Simply", s:"Carousel · parent + counsellor lead magnet", b:"authority", tag:"Authority"},
@@ -441,7 +487,7 @@ const posts = [
   {d:29, t:"The Road to Yashobhoomi — Cities So Far", s:"Carousel · roadshow momentum, builds toward finale", b:"kolkata", tag:"Kolkata"}
 ];
 
-const wa = [
+const baseline_wa = [
   {d:3, t:"Kolkata Date Announcement Broadcast", s:"To full list — save the date, registration link"},
   {d:5, t:"Scholarship Guide Lead-Magnet Drop", s:"Comment-to-DM delivery creative + CTA"},
   {d:7, t:"Registration Reminder #1", s:"Kolkata — 'have you registered yet?' nudge"},
@@ -456,7 +502,7 @@ const wa = [
   {d:29, t:"Monthly Newsletter Push", s:"WhatsApp creative driving to the newsletter"}
 ];
 
-const em = [
+const baseline_em = [
   {d:2, t:"Welcome — You're on the Sakura Quest List", s:"Onboarding · what to expect + Kolkata save-the-date", type:"em"},
   {d:6, t:"What Studying in Japan Actually Costs", s:"Parent nurture · cost breakdown vs UK/Canada", type:"em"},
   {d:8, t:"Meet the Universities Coming to Kolkata", s:"Consideration · institution profiles + register CTA", type:"em"},
@@ -468,58 +514,585 @@ const em = [
   {d:30, t:"Sakura Quest Monthly — July Edition", s:"NEWSLETTER · roadshow recap, alumni story, Japan news", type:"news"}
 ];
 
-// ---- MONTH GRID BUILD ----
-// July 2026: 1st = Wednesday. Mon-start grid.
-const firstDow = 2; // Mon=0..Sun=6 → July 1 is Wed = index 2
-const daysInMonth = 31;
-const dows = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-const grid = document.getElementById('monthGrid');
-dows.forEach(d=>{const e=document.createElement('div');e.className='dow';e.textContent=d;grid.appendChild(e);});
-for(let i=0;i<firstDow;i++){const e=document.createElement('div');e.className='day empty';grid.appendChild(e);}
-for(let day=1;day<=daysInMonth;day++){
-  const cell=document.createElement('div');
-  cell.className='day'+(day===12?' event':'');
-  let html='<div class="dn">'+day+'</div>';
-  if(day===12) html+='<span class="evt-pill">Kolkata</span>';
-  const p=posts.find(x=>x.d===day); if(p) html+='<span class="chip post">'+p.tag+' post</span>';
-  const w=wa.find(x=>x.d===day); if(w) html+='<span class="chip wa">WhatsApp</span>';
-  const e2=em.find(x=>x.d===day); if(e2) html+='<span class="chip '+(e2.type==='news'?'news':'em')+'">'+(e2.type==='news'?'Newsletter':'Email')+'</span>';
-  cell.innerHTML=html;
-  grid.appendChild(cell);
+// ---- FReX STANDALONE Track (To add in Option 1) ----
+const frex_posts = [
+  {d:1, t:"Beyond the Salaryman: Creative Japan Paths", s:"Reel · Spotlighting gaming, culinary, & design senmon schools", b:"frex", tag:"FReX Track"},
+  {d:8, t:"What is a Senmon Gakko? Alternate Career 101", s:"Carousel · Academic vs. Practical specialized education comparison", b:"frex", tag:"FReX Track"},
+  {d:13, t:"Manga Artists from India: Realistic Pathway?", s:"Reel · Interviewing an Indian animator working in Tokyo", b:"frex", tag:"FReX Track"},
+  {d:17, t:"Japan's High-Demand Fields: Tourism & Culinary", s:"Carousel · Under-publicized high starting salary roles", b:"frex", tag:"FReX Track"},
+  {d:21, t:"The Specified Skilled Worker Visa (SSW) Explained", s:"Carousel · Easy immigration route for non-degree holders", b:"frex", tag:"FReX Track"},
+  {d:23, t:"Is Japanese Language Mandatory for Alt-Careers?", s:"Reel · Language milestones (N3/N2) needed to work in Japan", b:"frex", tag:"FReX Track"},
+  {d:25, t:"Average Vocational Graduate Placement Statistics", s:"Carousel · parent authority lead-magnet displaying 98%+ placement rates", b:"frex", tag:"FReX Track"},
+  {d:26, t:"Indian Chefs making waves in Osaka & Tokyo", s:"Reel · Student culinary path showcase, dream builder", b:"frex", tag:"FReX Track"},
+  {d:28, t:"How to apply to Tokyo game design colleges", s:"Carousel · Step-by-step admissions toolkit for students", b:"frex", tag:"FReX Track"},
+  {d:31, t:"Creative Portfolios that get you hired in Japan", s:"Carousel + Resource Link · Career Advisor advice", b:"frex", tag:"FReX Track"}
+];
+
+const frex_wa = [
+  {d:1, t:"FReX Alternative Careers Track Launch", s:"Introducing senmon pathway guide to students"},
+  {d:8, t:"Senmon Gakko Guide Lead Magnet", s:"Downloadable PDF with Japanese Vocational College list"},
+  {d:13, t:"Indian Animator Tokyo Interview Link", s:"Direct WhatsApp video link push to student database"},
+  {d:17, t:"Alternate Career Salaries Comparison Chart", s:"High-impact visual sent to parent broadcast segments"},
+  {d:21, t:"SSW Visa Path Factsheet for Parents", s:"Quick, readable security checklist for family groups"},
+  {d:28, t:"Admissions Toolkit WhatsApp Drop", s:"Direct checklist of requirements for Game Design tracks"}
+];
+
+const frex_em = [
+  {d:4, t:"Why a 4-Year Academic Degree isn't the Only Path to Tokyo", s:"FReX Nurture · Vocational success vs traditional routes", type:"frex-em"},
+  {d:10, t:"Culinary, Gaming, Design: Senmon Gakko Admissions Guide", s:"FReX Nurture · Career paths breakdown", type:"frex-em"},
+  {d:19, t:"98% Placement Rate: The Numbers Parents Need for Peace of Mind", s:"Parent Track · Concrete data on alternate career outcomes", type:"frex-em"},
+  {d:25, t:"For Advisors: Counselling Alternate Careers in Japan", s:"Advisor Track · Curriculum maps & credit pathways factsheet", type:"frex-em"},
+  {d:31, t:"FReX Monthly Digest - July Edition", s:"ALT-CAREERS NEWSLETTER · Senmon school highlights & alumni logs", type:"frex-news"}
+];
+
+// ---- HYBRID / INTEGRATED BUNDLE DATABASES (Option 2) ----
+// Clean, optimized hybrid of 24 Social posts, 15 WA, 10 Email
+const integrated_posts = [
+  {d:1, t:"Beyond the Salaryman: Creative Japan Paths", s:"Reel · Spotlighting gaming, culinary, & design senmon schools", b:"frex", tag:"FReX Track"},
+  {d:2, t:"A Day in the Life of an Indian Student in Tokyo", s:"Reel · subtitled, no VO — curiosity-first top-of-funnel", b:"aspiration", tag:"Aspiration"},
+  {d:3, t:"Kolkata is Coming — Save the Date", s:"Announcement carousel · venue + date reveal for 12 July", b:"kolkata", tag:"Kolkata"},
+  {d:4, t:"JASSO & MEXT Scholarships, Explained Simply", s:"Carousel · parent + counsellor lead magnet", b:"authority", tag:"Authority"},
+  {d:5, t:"From Kolkata to Osaka — An Alumni Story", s:"Reel · peer proof, locally relevant to the leg", b:"proof", tag:"Proof"},
+  {d:6, t:"5 Careers You Didn't Know Japan Leads In", s:"Carousel · saves-optimised, broadens traditional and alt dream", b:"aspiration", tag:"Aspiration"},
+  {d:7, t:"What You'll Walk Away With at Sakura Quest", s:"Carousel · Kolkata value proposition", b:"kolkata", tag:"Kolkata"},
+  {d:8, t:"What is a Senmon Gakko? Alternate Career 101", s:"Carousel · Academic vs. Practical specialized education comparison", b:"frex", tag:"FReX Track"},
+  {d:9, t:"Universities You'll Meet in Kolkata", s:"Carousel · participating institution preview", b:"kolkata", tag:"Kolkata"},
+  {d:10, t:"Student Testimonial — Why I Chose Japan", s:"Reel · SQ 2025 attendee, now enrolled", b:"proof", tag:"Proof"},
+  {d:11, t:"Final 48 Hours — Kolkata Seats Filling Fast", s:"Story-style reel · scarcity + scholarship session teaser", b:"kolkata", tag:"Kolkata"},
+  {d:12, t:"LIVE from Kolkata — Same-Day Recap", s:"Reel · event-day energy, published same evening", b:"kolkata", tag:"Kolkata"},
+  {d:13, t:"Manga Artists from India: Realistic Pathway?", s:"Reel · Interviewing an Indian animator working in Tokyo", b:"frex", tag:"FReX Track"},
+  {d:14, t:"Kolkata Highlights — You Had to Be There", s:"Reel · post-event proof, teases next city", b:"kolkata", tag:"Kolkata"},
+  {d:15, t:"Cost of Living in Japan — A Student Budget", s:"Carousel · practical aspiration content", b:"aspiration", tag:"Aspiration"},
+  {d:16, t:"A Parent on Sending Their Child to Japan", s:"Reel · parent testimonial, the fear addressed", b:"proof", tag:"Proof"},
+  {d:18, t:"Japan vs Canada — An Honest Cost Comparison", s:"Carousel · the parent's core question, WA-shareable", b:"authority", tag:"Authority"},
+  {d:21, t:"The Specified Skilled Worker Visa (SSW) Explained", s:"Carousel · Easy immigration route for non-degree holders", b:"frex", tag:"FReX Track"},
+  {d:22, t:"Campus Tour — A Featured Japanese University", s:"Reel · immersive, academic focus", b:"aspiration", tag:"Aspiration"},
+  {d:23, t:"Is Japanese Language Mandatory for Alt-Careers?", s:"Reel · Language milestones (N3/N2) needed to work in Japan", b:"frex", tag:"FReX Track"},
+  {d:24, t:"Where Are They Now — A Placement Story", s:"Carousel · career outcome proof for parents", b:"proof", tag:"Proof"},
+  {d:25, t:"98%+ Placement Rate: Alt Career Job Security Breakdown", s:"Carousel · parent authority lead-magnet", b:"frex", tag:"FReX Track"},
+  {d:27, t:"Counsellor Factsheet — Admissions Timeline", s:"Carousel + PDF · LinkedIn-led, counsellor lead magnet", b:"authority", tag:"Authority"},
+  {d:29, t:"The Road to Yashobhoomi — Cities So Far", s:"Carousel · roadshow momentum, builds toward finale", b:"kolkata", tag:"Kolkata"}
+];
+
+const integrated_wa = [
+  {d:1, t:"FReX Alternative Careers Launch", s:"Introducing senmon pathway checklist"},
+  {d:3, t:"Kolkata Date Announcement Broadcast", s:"To full list — save the date, registration link"},
+  {d:5, t:"Scholarship & Alt-Career Guide Lead Drop", s:"Downloadable dual-resource toolkit PDF"},
+  {d:7, t:"Registration Reminder #1", s:"Kolkata — 'have you registered yet?' nudge"},
+  {d:9, t:"University Lineup Teaser", s:"Visual list of who they'll meet in Kolkata"},
+  {d:10, t:"Scholarship Session Highlight", s:"'Be there early — this fills up first'"},
+  {d:11, t:"Final 48-Hour Countdown", s:"Scarcity creative — seats remaining"},
+  {d:12, t:"Event-Day Logistics", s:"Venue, timing, what to bring — morning-of"},
+  {d:14, t:"Post-Event Thank You + Recap Link", s:"Warm follow-up to attendees"},
+  {d:16, t:"Next-Step Nudge for Attendees", s:"'Ready for a counselling session?' soft CTA"},
+  {d:17, t:"Vocational vs University Salaries Chart", s:"High-impact compare sent to parent segments"},
+  {d:20, t:"Japan vs Canada Cost Carousel", s:"Parent-facing, forwardable in family groups"},
+  {d:21, t:"SSW Visa Path Checklist for Parents", s:"Quick security breakdown sent to families"},
+  {d:24, t:"Alumni Story Drop", s:"Placement success — re-engagement creative"},
+  {d:29, t:"Monthly Master Newsletter Push", s:"WhatsApp creative driving to combined newsletter"}
+];
+
+const integrated_em = [
+  {d:2, t:"Welcome — You're on the Sakura Quest Master List", s:"Onboarding · what to expect + Kolkata save-the-date", type:"em"},
+  {d:4, t:"Why a Traditional 4-Year University is Only 50% of the Story", s:"Integrated Track · Introducing Senmon/Creative career options", type:"frex-em"},
+  {d:6, t:"What Studying in Japan Actually Costs", s:"Parent nurture · cost breakdown vs UK/Canada", type:"em"},
+  {d:8, t:"Meet the Academic Universities Coming to Kolkata", s:"Consideration · profiles + register CTA", type:"em"},
+  {d:11, t:"Kolkata is in 24 Hours — Final Details", s:"Conversion · logistics + last registration push", type:"em"},
+  {d:15, t:"She Had the Same Doubts You Have", s:"Peer story · undecided-student nurture", type:"em"},
+  {d:18, t:"Is Japan Safe? And What About Placement Outcomes?", s:"Parent nurture · safety + placement outcomes across both sectors", type:"em"},
+  {d:23, t:"For Counsellors — Your Japan Academic + Vocational Resource Kit", s:"Counsellor track · dual factsheets + alumni contacts", type:"em"},
+  {d:26, t:"Missed Kolkata? Here's What's Next", s:"Re-engagement · roadshow + Grand Finale tease", type:"em"},
+  {d:30, t:"Education Japan Monthly — July Master Edition", s:"COMBINED NEWSLETTER · Roadshow recap, Alt-Career spots, scholarship data", type:"news"}
+];
+
+
+// ---- SCENARIO DICTIONARY FOR COPY & METRICS ----
+const scenarios = {
+  baseline: {
+    label: "Option 1: Sakura Quest Baseline",
+    heroTitle: "Sakura Quest <span>2026</span><br>Content Engine",
+    heroSub: "An always-on social, WhatsApp, and email content retainer for Education Japan — built to fuel the Kolkata leg and every roadshow city after it, while steadily growing the audience that fills Yashobhoomi.",
+    metaScope: "Baseline Engine",
+    metaPrice: "Rs. 1.35L / mo",
+    pivotLabel: "The Baseline Architecture",
+    pivotDesc: "This is not a one-off campaign. It's a <strong>monthly content engine</strong> — 20 social posts, 12 WhatsApp creatives, 8 emails, and 1 newsletter every month. In event months like July, the calendar tilts toward the live roadshow leg. In quieter months, it tilts toward lead magnets and audience building. <strong>Same engine, re-weighted to the moment.</strong>",
+    audiences: [
+      { label: "Primary", class: "pink", title: "The Student", role: "Class 10–12 · Age 15–18", desc: "Culturally drawn to Japan via anime, manga, and gaming — but stuck between 'I love Japanese culture' and 'I could build a future there.'", quote: "Japan feels exciting, but is it a risk? What if I can't find a job? Is this realistic for someone like me?", unlockL: "What Unlocks Them", unlockD: "Peer proof — students exactly like them who made it work. Instagram Reels & YouTube Shorts." },
+      { label: "Decision Maker", class: "muted", title: "The Parent", role: "Primary Veto Holder", desc: "The financial and logical decision-maker. Unfamiliar with modern Japan, benchmarked on US/UK/Canada education paths.", quote: "Is Japan safe? Can my child get a job after? How does the cost compare to traditional study-abroad countries?", unlockL: "What Unlocks Them", unlockD: "Hard comparisons, cost breakdowns, safety data, testimonials. WhatsApp carousels and email explainers." },
+      { label: "High Leverage", class: "gold", title: "The Counsellor", role: "School Coach / Career Advisor", desc: "Highly influential but underserved. Recommends US/UK/Canada because resources are ready — Japan feels like extra work.", quote: "I don't know enough about Japanese university admissions to confidently recommend it to my students.", unlockL: "What Unlocks Them", unlockD: "Professional resource kits, university factsheets, alumni contacts. LinkedIn and shareable PDFs." }
+    ],
+    deliverables: [
+      { count: "20", unit: "Social Posts", desc: "Instagram & cross-posted reels, carousels, and statics across all content buckets." },
+      { count: "12", unit: "WhatsApp Creatives", desc: "Broadcast-ready creatives for registration nudges, reminders, and lead-magnet drops." },
+      { count: "8", unit: "Emails", desc: "Nurture sequences and broadcasts to students, parents, and the counsellor list." },
+      { count: "1", unit: "Newsletter", desc: "A monthly roundup — roadshow updates, alumni stories, and Japan education news." }
+    ],
+    buckets: [
+      { title: "Roadshow / Kolkata", count: "7 posts", goal: "Event-tied, time-sensitive. Drives registrations and footfall for the 12 July Kolkata leg, then converts it into proof for the next city.", items: ["Kolkata announcement + venue reveal", "\"What you'll walk away with\" carousel", "Participating universities preview", "Scholarship session teaser", "Final 48-hour countdown + seat scarcity", "Event-day live recap reel", "Post-event highlights + \"next stop\" tease"] },
+      { title: "Aspiration / Japan Life", count: "5 posts", goal: "Evergreen lead magnet for students. Builds the dream and grows reach independent of any event — the top of the funnel.", items: ["\"A day in the life of an Indian student in Tokyo\"", "Cost of living in Japan — student budget breakdown", "5 career paths you didn't know Japan leads in", "Anime-affinity meme post (brand-safe, comments-led)", "Campus tour reel — a featured university"] },
+      { title: "Proof / Stories", count: "4 posts", goal: "Peer and alumni proof. The single highest-converting content type for undecided students and anxious parents alike.", items: ["Alumni journey — \"From [city] to Osaka\"", "Student testimonial reel from SQ 2025", "Parent testimonial — addressing the fear", "\"Where are they now\" — placement success story"] },
+      { title: "Authority / Education", count: "4 posts", goal: "Lead magnets for parents and counsellors. Builds Education Japan's credibility as the definitive Japan-education authority in India.", items: ["JASSO & MEXT scholarships explained", "Is Japan safe? The data parents ask for", "Japan vs Canada — honest cost comparison", "Counsellor resource: admissions timeline factsheet"] }
+    ],
+    inclusions: [
+      "20 social posts — reels, carousels & statics",
+      "12 WhatsApp broadcast creatives",
+      "8 emails across all three audiences",
+      "1 monthly newsletter",
+      "Content strategy & monthly calendar",
+      "Copywriting, design & video editing",
+      "Roadshow-month re-weighting (e.g. Kolkata in July)",
+      "Monthly performance report"
+    ],
+    commercialPrice: "Rs. 1,35,000<span> / month</span>",
+    commercialSub: "Billed monthly · All standard content production, copywriting, design, and management included",
+    commercialNote: "Scope begins July 2026. On-ground live event coverage, paid ad budget/management, and creator collaborations are scoped separately as add-ons.",
+    closingHeader: "Let's build the engine<br>behind <span>Sakura Quest 2026.</span>",
+    closingSubText: "Kolkata is on 12 July. Starting the retainer in July means the engine is running before the leg — and every city after compounds on it.",
+    postsData: baseline_posts,
+    waData: baseline_wa,
+    emData: baseline_em
+  },
+
+  addon: {
+    label: "Option 1: SQ + FReX Add-On",
+    heroTitle: "Sakura Quest & <span class='frex-accent'>FReX Track</span><br>Dual Content Engine",
+    heroSub: "Our expanded baseline content engine supplemented by a dedicated, specialized content track for Alternative Careers in Japan (FReX) — capturing students interested in gaming, design, culinary arts, & vocational fields.",
+    metaScope: "Baseline + FReX Dual-Funnel",
+    metaPrice: "Rs. 2,00,000 / mo",
+    pivotLabel: "The Dual-Funnel Strategy",
+    pivotDesc: "This expands your reach to dual audience funnels. We deploy the **full Sakura Quest Baseline engine** (traditional universities) and overlay a **standalone FReX track** containing 10 extra posts, 6 extra WhatsApp broadcasts, and 5 custom emails. Run together with a shared management overhead discount of Rs. 15,000/mo.",
+    audiences: [
+      { label: "Traditional Stream", class: "pink", title: "University Seekers", role: "4-Year Bachelor Aspirants", desc: "Aspirants focused on traditional degrees (STEM, Business, Liberal Arts). Motivated by academic reputation, scholarships (MEXT), and corporate routes.", quote: "I want a globally respected Bachelor's degree and a path to a corporate career in Tokyo or Yokohama.", unlockL: "Key Nudge", unlockD: "Alumni success, ranking sheets, direct enrollment walkthroughs, scholarship eligibility matrices." },
+      { label: "Alternative Stream", class: "purple", title: "FReX Creative Student", role: "Vocational & Alt-Career Aspirants", desc: "Gen-Z students drawn to hands-on specializations: Game Design, Culinary arts, Manga illustration, Tourism/Hospitality, Tech start-ups.", quote: "I want to design games or work in high-end culinary arts in Tokyo. Is a vocational Senmon Gakko safe for visas?", unlockL: "Key Nudge", unlockD: "Specified Skilled Worker (SSW) visa transparency, senmon school tours, placement statistics, language path rules." },
+      { label: "Decision Veto", class: "muted", title: "The Practical Parent", role: "The Dual-Stream Signoff", desc: "Worried about placement security, cost-to-benefit ratio compared to the West, and physical student safety in Japanese cities.", quote: "Can my child actually secure a professional visa with alternative vocational certificates in Japan? What is the cost?", unlockL: "Key Nudge", unlockD: "Raw comparative ROI sheets, placement verification data, safety logs, WhatsApp-shareable graphics." }
+    ],
+    deliverables: [
+      { count: "30", unit: "Social Posts", desc: "20 Sakura Quest + 10 dedicated FReX alt-career posts (Reels, carousels, and statics)." },
+      { count: "18", unit: "WhatsApp Broadcasts", desc: "12 baseline updates + 6 high-conversion vocational-track and visa-pathway drops." },
+      { count: "13", unit: "Emails / Digests", desc: "8 baseline sequences + 5 targeted FReX emails addressing non-academic paths and parent concerns." },
+      { count: "2", unit: "Newsletters", desc: "1 Sakura Quest monthly + 1 specialized FReX alternative career monthly digest." }
+    ],
+    buckets: [
+      { title: "Roadshow / Kolkata", count: "7 posts", goal: "Event-tied, time-sensitive. Drives registrations and footfall for the 12 July Kolkata leg, then converts it into proof for the next city.", items: ["Kolkata announcement + venue reveal", "\"What you'll walk away with\" carousel", "Participating universities preview", "Scholarship session teaser", "Final 48-hour countdown + seat scarcity", "Event-day live recap reel", "Post-event highlights + \"next stop\" tease"] },
+      { title: "FReX Alt-Career Spotlight", count: "10 posts", goal: "Exclusive track highlighting specialized vocational pathways, specialized starting salaries, specific school previews, and Specified Skilled visas.", items: ["Beyond the Salaryman: Creative Japan Paths Showcase", "What is a Senmon Gakko? Alternate Career 101 Guide", "Manga Artists from India: Realistic Pathway?", "Japan's High-Demand Fields: Tourism & Culinary Guide", "The Specified Skilled Worker Visa (SSW) Explained Simply", "Is Japanese Language Mandatory for Alt-Careers?", "Average Vocational Graduate Placement Statistics Sheet", "Indian Chefs making waves in Osaka & Tokyo showcase", "How to apply to Tokyo game design colleges", "Creative Portfolios that get you hired in Japan"] },
+      { title: "Aspiration & Proof", count: "9 posts", goal: "Evergreen top-of-funnel reach builder combined with peer, parent, and institutional success stories across both university and vocational streams.", items: ["\"A day in the life of an Indian student in Tokyo\"", "Cost of living in Japan — student budget breakdown", "5 career paths you didn't know Japan leads in", "Anime-affinity meme post (brand-safe, comments-led)", "Campus tour reel — a featured university", "Alumni journey — \"From [city] to Osaka\"", "Student testimonial reel from SQ 2025", "Parent testimonial — addressing the safety fear", "\"Where are they now\" — placement success story"] },
+      { title: "Authority Engines", count: "4 posts", goal: "Lead magnets for parents and counsellors. Builds Education Japan's credibility as the definitive Japan-education authority in India.", items: ["JASSO & MEXT scholarships explained", "Is Japan safe? The data parents ask for", "Japan vs Canada — honest cost comparison", "Counsellor resource: admissions timeline factsheet"] }
+    ],
+    inclusions: [
+      "30 social posts (20 Baseline SQ + 10 specialized FReX track)",
+      "18 WhatsApp broadcast templates & graphics",
+      "13 target emails (8 Baseline SQ + 5 dedicated FReX sequences)",
+      "2 custom newsletters (1 Master + 1 Alternate Career Digest)",
+      "Unified dual-path content strategy & master calendar",
+      "In-house design, copywriting, and dynamic editing for both paths",
+      "On-demand Kolkata-leg reweighting optimization",
+      "Comprehensive monthly performance reports mapping both funnels"
+    ],
+    commercialPrice: "Rs. 2,00,000<span> / month</span>",
+    commercialSub: "Billed monthly · Bundled price (Rs. 1.35L Baseline + Rs. 65K FReX add-on. Saving Rs. 15,000 in management fees)",
+    commercialNote: "Scope begins July 2026. On-ground live event coverage, paid ad budget/management, and creator collaborations are scoped separately as add-ons.",
+    closingHeader: "Deploy the dual-funnel engine behind <span>Education Japan.</span>",
+    closingSubText: "Combining traditional degree seekers with creative vocational aspirants maximizes your top-of-funnel reach and fills more seats across all legs.",
+    postsData: [...baseline_posts, ...frex_posts].sort((a,b)=>a.d - b.d),
+    waData: [...baseline_wa, ...frex_wa].sort((a,b)=>a.d - b.d),
+    emData: [...baseline_em, ...frex_em].sort((a,b)=>a.d - b.d)
+  },
+
+  integrated: {
+    label: "Option 2: FReX Integrated Bundle",
+    heroTitle: "Education Japan <span>2026</span><br>Integrated Content Engine",
+    heroSub: "An optimized, single-retainer unified engine designed to showcase both traditional universities (Sakura Quest) and alternative creative careers (FReX) under a single efficient content structure.",
+    metaScope: "Hybrid Single Retainer",
+    metaPrice: "Rs. 1,80,000 / mo",
+    pivotLabel: "The Integrated Advantage",
+    pivotDesc: "This is a **streamlined, consolidated engine**. Instead of running two independent campaigns side-by-side, we merge them into an efficient hybrid pipeline (24 Social Posts, 15 WhatsApps, 10 Emails, 1 Combined Newsletter). We optimize cross-pollination—for example, converting anime fans directly to game design path leads while keeping the administrative overhead fully consolidated.",
+    audiences: [
+      { label: "Gen-Z Aspiration", class: "pink", title: "The Career Explorer", role: "Class 10–12 Student", desc: "A culturally curious student who values either traditional universities or creative vocational paths. Attracted to Tokyo's modern tech and design landscape.", quote: "I want to study in Japan, whether it's an engineering degree or a game design diploma. Show me both options!", unlockL: "Key Nudge", unlockD: "Hybrid Reels showing Tokyo lifestyle, highlighting both college campuses and creative tech workshops." },
+      { label: "The Investor", class: "muted", title: "The Parent", role: "Ultimate Decision Maker", desc: "Requires hard proof of safety, cost comparisons vs the West, and clear validation of job placement security regardless of the track chosen.", quote: "Is my child safe, and will they secure a high-paying job in Japan after graduating from either stream?", unlockL: "Key Nudge", unlockD: "WhatsApp infographics showing starting salaries, security statistics, and specific visa checklists." },
+      { label: "The Guide", class: "gold", title: "The Counselor", role: "School Influencer", desc: "Needs simple, integrated resource kits that explain both the traditional academic timeline and the vocational application deadlines.", quote: "I need simple materials so I can comfortably guide students toward both universities and Senmon Gakko in Japan.", unlockL: "Key Nudge", unlockD: "LinkedIn carousels, downloadable PDF timeline guides, and single-sheet comprehensive brochures." }
+    ],
+    deliverables: [
+      { count: "24", unit: "Social Posts", desc: "A beautifully balanced blend: 16 Sakura Quest/Roadshow + 8 specialized FReX alt-career posts." },
+      { count: "15", unit: "WhatsApp Creatives", desc: "Optimized broadcasts covering registration, lead magnet drops, and parent-facing comparative data sheets." },
+      { count: "10", unit: "Targeted Emails", desc: "A unified email sequence directing readers down the right track based on their behavior." },
+      { count: "1", unit: "Master Newsletter", desc: "A massive, high-credibility combined monthly newsletter containing both traditional and creative highlights." }
+    ],
+    buckets: [
+      { title: "Roadshow / Kolkata", count: "7 posts", goal: "Event-tied, time-sensitive. Drives registrations and footfall for the 12 July Kolkata leg, then converts it into proof for the next city.", items: ["Kolkata announcement + venue reveal", "\"What you'll walk away with\" carousel", "Participating universities preview", "Scholarship session teaser", "Final 48-hour countdown + seat scarcity", "Event-day live recap reel", "Post-event highlights + \"next stop\" tease"] },
+      { title: "FReX Alt-Career Spotlight", count: "6 posts", goal: "Targeted posts highlighting practical creative pathways, job market placement success, Specified Skilled visas, and language tracks.", items: ["Beyond the Salaryman: Creative Japan Paths Showcase", "What is a Senmon Gakko? Alternate Career 101 Guide", "Manga Artists from India: Realistic Pathway?", "The Specified Skilled Worker Visa (SSW) Explained Simply", "Is Japanese Language Mandatory for Alt-Careers?", "98%+ Placement Rate: Alt Career Job Security Breakdown"] },
+      { title: "Aspiration / Japan Life", count: "6 posts", goal: "Evergreen top-of-funnel reach builder showcasing campus environments, student lifestyles, and budget living in Japanese cities.", items: ["\"A day in the life of an Indian student in Tokyo\"", "Cost of living in Japan — student budget breakdown", "5 career paths you didn't know Japan leads in", "Anime-affinity meme post (brand-safe, comments-led)", "Campus tour reel — a featured university", "The Road to Yashobhoomi — Cities So Far"] },
+      { title: "Proof & Authority", count: "5 posts", goal: "Peer testimonials, parent reassurance data sheets, and professional timeline guides establishing absolute credibility.", items: ["From Kolkata to Osaka — An Alumni Story", "Student Testimonial — Why I Chose Japan", "A Parent on Sending Their Child to Japan", "Japan vs Canada — An Honest Cost Comparison", "Counsellor Factsheet — Admissions Timeline"] }
+    ],
+    inclusions: [
+      "24 balanced social posts (reels, carousels, and visual posts)",
+      "15 unified WhatsApp broadcast creatives",
+      "10 highly-targeted email sequences (Onboarding, parent nurtures, counselor resources)",
+      "1 massive Master Monthly Newsletter (Education Japan Monthly)",
+      "Integrated dual-track strategy & comprehensive July master calendar",
+      "Copywriting, design, asset creation, and short-form video editing",
+      "Complete roadshow-month weight adjustments",
+      "Integrated performance report with segmented audience tracking"
+    ],
+    commercialPrice: "Rs. 1,80,000<span> / month</span>",
+    commercialSub: "Billed monthly · Efficient single-retainer hybrid setup (highly recommended for high ROI & unified messaging)",
+    commercialNote: "Scope begins July 2026. On-ground live event coverage, paid ad budget/management, and creator collaborations are scoped separately as add-ons.",
+    closingHeader: "Unify your messaging with the <span>Integrated Content Engine.</span>",
+    closingSubText: "A singular, highly efficient retainer that delivers massive Gen-Z and parent audience growth across all educational pathways.",
+    postsData: integrated_posts,
+    waData: integrated_wa,
+    emData: integrated_em
+  }
+};
+
+// ---- CONTROLLER TO SET SCENARIOS ----
+function setScenario(id) {
+  currentScenario = id;
+  const s = scenarios[id];
+
+  // Update scenario banner & buttons
+  document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = Array.from(document.querySelectorAll('.scenario-btn')).find(b => b.textContent.includes(id === 'baseline' ? 'Baseline' : id === 'addon' ? 'Add-On' : 'Integrated'));
+  if (activeBtn) activeBtn.classList.add('active');
+  document.getElementById('active-scenario-label').textContent = s.label;
+
+  // Update Hero Section
+  document.getElementById('hero-main-title').innerHTML = s.heroTitle;
+  document.getElementById('hero-subtitle').textContent = s.heroSub;
+  document.getElementById('hero-meta-scope').textContent = s.metaScope;
+  document.getElementById('hero-meta-price').textContent = s.metaPrice;
+  
+  const heroMetaPriceEl = document.getElementById('hero-meta-price');
+  if (id !== 'baseline') {
+    heroMetaPriceEl.classList.add('purple');
+  } else {
+    heroMetaPriceEl.classList.remove('purple');
+  }
+
+  const pivotCard = document.getElementById('hero-pivot-card');
+  if (id !== 'baseline') {
+    pivotCard.classList.add('frex-pivot');
+  } else {
+    pivotCard.classList.remove('frex-pivot');
+  }
+  document.getElementById('pivot-label').textContent = s.pivotLabel;
+  document.getElementById('pivot-desc').innerHTML = s.pivotDesc;
+
+  // Update Audiences
+  renderAudiences(s.audiences);
+
+  // Update Deliverables Counts
+  renderDeliverables(s.deliverables);
+
+  // Update Content Buckets
+  renderBuckets(s.buckets);
+
+  // Update Calendar Detail Count Labels
+  document.getElementById('tab-posts-count').textContent = `· ${s.postsData.length} detail`;
+  document.getElementById('tab-wa-count').textContent = `· ${s.waData.length} detail`;
+  document.getElementById('tab-em-count').textContent = `· ${s.emData.length} detail`;
+
+  // Update Legend Indicator on Posts
+  const frexLegs = document.querySelectorAll('.id-frex-leg');
+  frexLegs.forEach(el => {
+    el.style.display = (id !== 'baseline') ? 'flex' : 'none';
+  });
+
+  // Re-render Calendar Grid & Lists
+  renderCalendarGrid();
+  renderCalendarLists();
+
+  // Update Commercial Price Card
+  const priceCard = document.getElementById('commercial-price-card');
+  if (id !== 'baseline') {
+    priceCard.classList.add('frex-active');
+  } else {
+    priceCard.classList.remove('frex-active');
+  }
+  document.getElementById('commercial-tag-label').textContent = s.label;
+  document.getElementById('commercial-price-value').innerHTML = s.commercialPrice;
+  document.getElementById('commercial-price-sub').textContent = s.commercialSub;
+  document.getElementById('commercial-note-text').textContent = s.commercialNote;
+
+  // Render inclusions list
+  const inclusionsContainer = document.getElementById('commercial-inclusions-list');
+  inclusionsContainer.innerHTML = '';
+  s.inclusions.forEach(inc => {
+    const div = document.createElement('div');
+    div.className = 'pi';
+    div.textContent = inc;
+    inclusionsContainer.appendChild(div);
+  });
+
+  // Update closing card
+  document.getElementById('closing-main-header').innerHTML = s.closingHeader;
+  document.getElementById('closing-sub-text').textContent = s.closingSubText;
 }
 
-// ---- LIST BUILDERS ----
-function dlabel(d){return '<div class="cl-date">'+d+'<span>Jul</span></div>';}
-const postsList=document.getElementById('postsList');
-posts.forEach(p=>{
-  const row=document.createElement('div');row.className='cl-row';
-  row.innerHTML=dlabel(p.d)+'<div class="cl-body"><div class="cl-title">'+p.t+'</div><div class="cl-sub">'+p.s+'</div></div><div class="cl-tag-col"><div class="cl-tag t-'+p.b+'">'+p.tag+'</div></div>';
-  postsList.appendChild(row);
-});
-const waList=document.getElementById('waList');
-wa.forEach(w=>{
-  const row=document.createElement('div');row.className='cl-row wa-row';
-  row.innerHTML=dlabel(w.d)+'<div class="cl-body"><div class="cl-title">'+w.t+'</div><div class="cl-sub">'+w.s+'</div></div><div class="cl-tag-col"><div class="cl-tag t-proof">WhatsApp</div></div>';
-  waList.appendChild(row);
-});
-const emList=document.getElementById('emList');
-em.forEach(e=>{
-  const row=document.createElement('div');row.className='cl-row em-row';
-  const tagClass=e.type==='news'?'t-authority':'t-aspiration';
-  const tagText=e.type==='news'?'Newsletter':'Email';
-  row.innerHTML=dlabel(e.d)+'<div class="cl-body"><div class="cl-title">'+e.t+'</div><div class="cl-sub">'+e.s+'</div></div><div class="cl-tag-col"><div class="cl-tag '+tagClass+'">'+tagText+'</div></div>';
-  emList.appendChild(row);
-});
-
-// ---- TABS ----
-document.querySelectorAll('.cal-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.cal-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.cal-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
+// ---- RENDERING HELPERS ----
+function renderAudiences(audData) {
+  const container = document.getElementById('audiences-container');
+  container.innerHTML = '';
+  audData.forEach(aud => {
+    const card = document.createElement('div');
+    card.className = `aud-card ${aud.class === 'purple' ? 'frex-card' : aud.class}`;
+    card.innerHTML = `
+      <span class="tag ${aud.class}">${aud.label}</span>
+      <h3>${aud.title}</h3>
+      <div class="aud-role">${aud.role}</div>
+      <div class="aud-desc">${aud.desc}</div>
+      <div class="aud-quote">${aud.quote}</div>
+      <div class="aud-unlock-l">${aud.unlockL}</div>
+      <div class="aud-unlock-d">${aud.unlockD}</div>
+    `;
+    container.appendChild(card);
   });
-});
+}
+
+function renderDeliverables(delivData) {
+  const container = document.getElementById('deliverables-container');
+  container.innerHTML = '';
+  delivData.forEach((del, i) => {
+    const card = document.createElement('div');
+    // Assign specific coloring classes for variation
+    let extClass = '';
+    if (i === 1) extClass = 'wa';
+    else if (i === 2) extClass = 'em';
+    
+    card.className = `deliv ${extClass}`;
+    
+    // Add specific visual styling for FReX expanded scope numbers
+    const isPurple = (currentScenario !== 'baseline' && i === 0);
+    const numClass = isPurple ? 'num purple' : 'num';
+
+    card.innerHTML = `
+      <div class="${numClass}">${del.count}</div>
+      <div class="unit">${del.unit}</div>
+      <div class="desc">${del.desc}</div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderBuckets(bucketData) {
+  const container = document.getElementById('buckets-container');
+  container.innerHTML = '';
+  bucketData.forEach(bucket => {
+    const isFrex = bucket.title.includes('FReX');
+    const card = document.createElement('div');
+    card.className = `bucket ${isFrex ? 'frex-b' : ''}`;
+    
+    let listHTML = '';
+    bucket.items.forEach(item => {
+      listHTML += `<li>${item}</li>`;
+    });
+
+    card.innerHTML = `
+      <div class="bucket-top">
+        <h3>${bucket.title}</h3>
+        <span class="bucket-count">${bucket.count}</span>
+      </div>
+      <div class="bucket-goal">${bucket.goal}</div>
+      <ul>${listHTML}</ul>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// ---- DYNAMIC MASTER CALENDAR GENERATOR ----
+function renderCalendarGrid() {
+  const grid = document.getElementById('monthGrid');
+  grid.innerHTML = '';
+
+  // Header days
+  const dows = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  dows.forEach(d => {
+    const e = document.createElement('div');
+    e.className = 'dow';
+    e.textContent = d;
+    grid.appendChild(e);
+  });
+
+  // July 2026 starts on a Wednesday
+  const firstDow = 2; // Wed index (Mon=0, Tue=1, Wed=2)
+  const daysInMonth = 31;
+
+  for(let i=0; i<firstDow; i++) {
+    const e = document.createElement('div');
+    e.className = 'day empty';
+    grid.appendChild(e);
+  }
+
+  const s = scenarios[currentScenario];
+
+  // Render days
+  for(let day=1; day<=daysInMonth; day++) {
+    const cell = document.createElement('div');
+    cell.className = 'day' + (day === 12 ? ' event' : '');
+    
+    let html = `<div class="dn">${day}</div>`;
+    if(day === 12) {
+      html += `<span class="evt-pill">Kolkata</span>`;
+    }
+
+    // Find if posts exist on this day
+    const dayPosts = s.postsData.filter(x => x.d === day);
+    dayPosts.forEach(p => {
+      if(p.b === 'frex') {
+        html += `<span class="chip post-frex">FReX Post</span>`;
+      } else {
+        html += `<span class="chip post">${p.tag} Post</span>`;
+      }
+    });
+
+    // Find if WhatsApp broadcasts exist on this day
+    const dayWa = s.waData.filter(x => x.d === day);
+    dayWa.forEach(() => {
+      html += `<span class="chip wa">WhatsApp</span>`;
+    });
+
+    // Find if emails exist on this day
+    const dayEm = s.emData.filter(x => x.d === day);
+    dayEm.forEach(e2 => {
+      let emClass = 'em';
+      let label = 'Email';
+      if(e2.type === 'news') {
+        emClass = 'news';
+        label = 'Newsletter';
+      } else if (e2.type === 'frex-news') {
+        emClass = 'post-frex';
+        label = 'FReX Digest';
+      } else if (e2.type === 'frex-em') {
+        emClass = 'post-frex';
+        label = 'FReX Email';
+      }
+      html += `<span class="chip ${emClass}">${label}</span>`;
+    });
+
+    cell.innerHTML = html;
+    grid.appendChild(cell);
+  }
+
+  // Render appropriate Legend
+  const legendContainer = document.getElementById('calendar-legend-container');
+  legendContainer.innerHTML = `
+    <div class="leg-item"><span class="leg-dot" style="background:#FDEEF1;border:1px solid #A01F35"></span>Social Post</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#E8F5EC;border:1px solid #128C47"></span>WhatsApp</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#EEF0FA;border:1px solid #3A4DA0"></span>Email</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#F5EDD0;border:1px solid #8A6B10"></span>Newsletter</div>
+  `;
+  if(currentScenario !== 'baseline') {
+    legendContainer.innerHTML += `
+      <div class="leg-item"><span class="leg-dot" style="background:var(--frexPale);border:1px solid var(--frex)"></span>FReX Track</div>
+    `;
+  }
+}
+
+function renderCalendarLists() {
+  const s = scenarios[currentScenario];
+
+  // Helper for dates formatting
+  function dlabel(d){ return `<div class="cl-date">${d}<span>Jul</span></div>`; }
+
+  // 1. Render Posts List
+  const postsList = document.getElementById('postsList');
+  postsList.innerHTML = '';
+  s.postsData.forEach(p => {
+    const row = document.createElement('div');
+    const isFrex = p.b === 'frex';
+    row.className = `cl-row ${isFrex ? 'frex-border' : ''}`;
+    
+    let tagClass = `t-${p.b}`;
+    if (p.b === 'kolkata') tagClass = 't-kolkata';
+    else if (p.b === 'aspiration') tagClass = 't-aspiration';
+    else if (p.b === 'proof') tagClass = 't-proof';
+    else if (p.b === 'authority') tagClass = 't-authority';
+    
+    row.innerHTML = `
+      ${dlabel(p.d)}
+      <div class="cl-body">
+        <div class="cl-title">${p.t}</div>
+        <div class="cl-sub">${p.s}</div>
+      </div>
+      <div class="cl-tag-col">
+        <div class="cl-tag ${tagClass}">${p.tag}</div>
+      </div>
+    `;
+    postsList.appendChild(row);
+  });
+
+  // 2. Render WhatsApp List
+  const waList = document.getElementById('waList');
+  waList.innerHTML = '';
+  s.waData.forEach(w => {
+    const row = document.createElement('div');
+    const isFrex = (currentScenario !== 'baseline' && (w.t.includes('FReX') || w.t.includes('Senmon') || w.t.includes('Alt-Career') || w.t.includes('SSW')));
+    row.className = `cl-row wa-row ${isFrex ? 'frex-border' : ''}`;
+    
+    row.innerHTML = `
+      ${dlabel(w.d)}
+      <div class="cl-body">
+        <div class="cl-title">${w.t}</div>
+        <div class="cl-sub">${w.s}</div>
+      </div>
+      <div class="cl-tag-col">
+        <div class="cl-tag ${isFrex ? 't-frex' : 't-proof'}">${isFrex ? 'FReX Broadcast' : 'WhatsApp'}</div>
+      </div>
+    `;
+    waList.appendChild(row);
+  });
+
+  // 3. Render Email List
+  const emList = document.getElementById('emList');
+  emList.innerHTML = '';
+  s.emData.forEach(e => {
+    const row = document.createElement('div');
+    const isFrex = e.type.startsWith('frex');
+    row.className = `cl-row em-row ${isFrex ? 'frex-border' : ''}`;
+    
+    let tagClass = 't-aspiration';
+    let tagText = 'Email';
+    if(e.type === 'news') {
+      tagClass = 't-authority';
+      tagText = 'Newsletter';
+    } else if(e.type === 'frex-news') {
+      tagClass = 't-frex';
+      tagText = 'FReX Digest';
+    } else if(e.type === 'frex-em') {
+      tagClass = 't-frex';
+      tagText = 'FReX Email';
+    }
+
+    row.innerHTML = `
+      ${dlabel(e.d)}
+      <div class="cl-body">
+        <div class="cl-title">${e.t}</div>
+        <div class="cl-sub">${e.s}</div>
+      </div>
+      <div class="cl-tag-col">
+        <div class="cl-tag ${tagClass}">${tagText}</div>
+      </div>
+    `;
+    emList.appendChild(row);
+  });
+}
+
+// ---- CALENDAR TABS CONTROLLER ----
+function setCalTab(panelId) {
+  currentCalTab = panelId;
+  document.querySelectorAll('.cal-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.cal-panel').forEach(p => p.classList.remove('active'));
+  
+  const activeTabBtn = Array.from(document.querySelectorAll('.cal-tab')).find(t => t.dataset.panel === panelId);
+  if (activeTabBtn) activeTabBtn.classList.add('active');
+  
+  const targetPanel = document.getElementById('panel-' + panelId);
+  if (targetPanel) targetPanel.classList.add('active');
+}
+
+// ---- INITIALIZER ----
+window.onload = function() {
+  setScenario('baseline');
+};
 </script>
 </body>
 </html>
